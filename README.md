@@ -18,7 +18,11 @@
 ## Building executables
 
 I used electron-builder, I had some issues while building : windows installer from ubuntu and ubuntu installer from windows.
-
+```
+if (isAwesome){
+  return true
+}
+```
 
 		
 
