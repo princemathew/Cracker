@@ -31,20 +31,14 @@ ipcMain.on("terminal.keystroke", (event, key) => {
     ptyProcess.write(key);
 });
 
-ipcMain.on("open.file", (event,filepath)=>{
-  dialog.showOpenDialog(win, {
-    properties: ['openFile']
-  }).then(file => { 
-    if(!file.canceled){
-      filepath = file.filePaths[0].toString(); ;
-      event.reply("file.path", filepath); 
-    }
-}); 
+ipcMain.handle("open.file", async(event,dialogOptionts)=>{
+  let filepath = await dialog.showOpenDialog(win, dialogOptionts);
+  filepath = filepath.filePaths[0].toString()
+  console.log(filepath)
+  return filepath
 });
 
-
 }
-
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {

@@ -20,23 +20,26 @@
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">File Type</button>
+            <label for="filetype">File type:</label>
+            <select name='filetype' id='filetype' class="dropbtn" onchange="fileType()">
             <div class="dropdown-content">
-                <a href="#">doc</a>
-                <a href="#">pdf</a>
-                <a href="#">bin</a>
-                <a href="#">bin</a>
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="doc">doc</option>
+                <option value="pdf">pdf</option>
             </div>
+        </select>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">Password Length</button>
+            <label for="passwdlen">Password Lenght:</label>
+            <select name='passwdlen' id='passwdlen' class="dropbtn">
             <div class="dropdown-content">
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
             </div>
+            </select>
         </div>
         
         <button class="term" id='tab' onclick="openShell();">Terminal</button>  
@@ -63,8 +66,8 @@
 
         
         <div class="container">
-                    <button id="file" onclick="fileHandle()">Choose File</button>
-                    <button id="submit">Submit</button>
+                    <button id="file" onclick="fileHandle()" disabled>Choose File</button>
+                    <button id="submit" disabled>Submit</button>
                     <p id="filepath"></p>
         </div>
         
