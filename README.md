@@ -12,6 +12,7 @@ sudo apt-get install -y nodejs
 ```
 2. Goto the project folder in terminal, then execute following commands
  * ```npm install```
+ 
  For npm start to work please change the paths of python & perl scripts called in file.js line number 37 & 46 respectively
  * ```npm start```
  
