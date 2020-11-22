@@ -4,13 +4,13 @@
 
 ## Developing
 
-1. To edit and test code you should have nodejs installed in your system
+1. Install nodejs
 ```
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -  
 
 sudo apt-get install -y nodejs
 ```
-2. Goto the project folder in terminal, then execute following commands
+2. Goto the project folder in terminal, then execute following commands to run
  * ```npm install```
 
  For npm start to work please change the paths of python & perl scripts called in file.js line number 37 & 46 respectively
