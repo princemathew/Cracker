@@ -12,7 +12,7 @@ sudo apt-get install -y nodejs
 ```
 2. Goto the project folder in terminal, then execute following commands
  * ```npm install```
- 
+
  For npm start to work please change the paths of python & perl scripts called in file.js line number 37 & 46 respectively
  * ```npm start```
  
@@ -23,6 +23,11 @@ sudo apt-get install -y nodejs
 I used electron-builder, I had some issues while building : windows installer from ubuntu and ubuntu installer from windows.
 
 ```npm run dist```
+
+
+## Credits
+
+pdf2john.pl and office2john.py source - https://github.com/openwall/john/
 
 
 		
