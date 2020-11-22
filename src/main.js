@@ -34,7 +34,6 @@ ipcMain.on("terminal.keystroke", (event, key) => {
 ipcMain.handle("open.file", async(event,dialogOptionts)=>{
   let filepath = await dialog.showOpenDialog(win, dialogOptionts);
   filepath = filepath.filePaths[0].toString()
-  console.log(filepath)
   return filepath
 });
 

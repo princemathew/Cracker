@@ -1,7 +1,8 @@
 # Password Cracker
 
 
-## Code testing & editing
+
+## Developing
 
 1. To edit and test code you should have nodejs installed in your system
 ```
@@ -11,17 +12,13 @@ sudo apt-get install -y nodejs
 ```
 2. Goto the project folder in terminal, then execute following commands
  * ```npm install```
- * In windows
-    ```.\node_modules\.bin\electron-rebuild.cmd```
-
-   In ubuntu
-    ```./node_modules/.bin/electron-rebuild```
  * ```npm start```
 
 
-## Building executables
+## Packaging
 
 I used electron-builder, I had some issues while building : windows installer from ubuntu and ubuntu installer from windows.
+```npm run dist```
 
 
 		

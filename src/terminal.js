@@ -8,7 +8,6 @@ function openShell(){
         localStorage.clickcount = 1;
     }
     
-    console.log(localStorage.clickcount);
      
     document.getElementById('close').disabled = false;
     document.getElementById('close').style.display = 'inline';

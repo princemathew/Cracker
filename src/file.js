@@ -21,7 +21,6 @@ function fileHandle(){
           };
     }
     ipcRenderer.invoke("open.file",dialogOptions).then((filepath)=>{
-        console.log(filepath)
         document.getElementById('submit').disabled = false;
         document.getElementById('filepath').innerHTML = filepath
         document.getElementById('submit').addEventListener("click", function(){
@@ -32,15 +31,25 @@ function fileHandle(){
                 callback(stdout); 
                 });
             }
+            var path = require('path');
             if(type=='pdf'){
-                execute('perl ./src/run/pdf2john.pl '+ filepath, (output) => {
-                    document.getElementById('hash').innerHTML = output;
-                    });
+                /*for building uncomment below line */
+                var perl = require('child_process').spawn('perl',[path.join(__dirname, '../..', '/src/run/pdf2john.pl'),filepath]);
+                /*for building comment below line */
+                //var perl = require('child_process').spawn('perl',['src/run/pdf2john.pl',filepath]);
+                perl.stdout.on('data', function (data) {
+                document.getElementById('hash').innerHTML = data.toString('utf8');
+                });
             }
             else if(type=='doc'){
-                execute('python3 ./src/run/office2john.py '+ filepath, (output) => {
-                    document.getElementById('hash').innerHTML = output;
-                    });      
+                /*for building uncomment below line */
+                var python = require('child_process').spawn('python3',[path.join(__dirname, '../..', '/src/run/office2john.py'),filepath]);
+                /*for building comment below line */
+                //var python = require('child_process').spawn('python3',['src/run/office2john.py',filepath]);
+                python.stdout.on('data', function (data) {
+                  document.getElementById('hash').innerHTML = data.toString('utf8');
+                });
+
             }
             
         });
