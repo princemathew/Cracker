@@ -34,20 +34,23 @@ function fileHandle(){
             var path = require('path');
             if(type=='pdf'){
                 /*for building uncomment below line */
-                var perl = require('child_process').spawn('perl',[path.join(__dirname, '../..', '/src/run/pdf2john.pl'),filepath]);
+                //var perl = require('child_process').spawn('perl',[path.join(__dirname, '../..', '/src/run/pdf2john.pl'),filepath]);
                 /*for building comment below line */
-                //var perl = require('child_process').spawn('perl',['src/run/pdf2john.pl',filepath]);
+                var perl = require('child_process').spawn('perl',['src/run/pdf2john.pl',filepath]);
                 perl.stdout.on('data', function (data) {
-                document.getElementById('hash').innerHTML = data.toString('utf8');
+                document.getElementById('hash').value = data.toString('utf8');
+                document.getElementById('hash').hidden = false
                 });
             }
             else if(type=='doc'){
                 /*for building uncomment below line */
-                var python = require('child_process').spawn('python3',[path.join(__dirname, '../..', '/src/run/office2john.py'),filepath]);
+                //var python = require('child_process').spawn('python3',[path.join(__dirname, '../..', '/src/run/office2john.py'),filepath]);
                 /*for building comment below line */
-                //var python = require('child_process').spawn('python3',['src/run/office2john.py',filepath]);
+                var python = require('child_process').spawn('python3',['src/run/office2john.py',filepath]);
                 python.stdout.on('data', function (data) {
                   document.getElementById('hash').innerHTML = data.toString('utf8');
+                  document.getElementById('hash').value = data.toString('utf8');
+                  document.getElementById('hash').hidden = false
                 });
 
             }
