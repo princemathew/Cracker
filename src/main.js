@@ -13,7 +13,7 @@ function createWindow () {
       nodeIntegration: true
     }
   })
-
+  win.maximize()
   win.loadFile('src/crack.html')
   win.webContents.executeJavaScript('localStorage.setItem("clickcount",0);', true);
   //win.removeMenu();
