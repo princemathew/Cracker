@@ -59,6 +59,33 @@ header a:hover {
   font-size: 18px;
   border: none;
 }
+
+.file{
+  margin-left: 4px;
+  margin-bottom: 2px;
+  background-color: rgb(76, 130, 175);
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  position: relative;
+  display: inline-block;
+}
+#filename{
+  margin-left: 4px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 95px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.file:hover {
+  background-color: #06df18;
+}
+
 .term {
   margin-left: 4px;
   margin-bottom: 2px;
@@ -105,7 +132,7 @@ header a:hover {
   background-color: #06df18;
 }
 
-.terminal:hover {
+.term:hover {
   background-color: #06df18;
 }
 

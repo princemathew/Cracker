@@ -22,15 +22,8 @@ function fileHandle(){
     }
     ipcRenderer.invoke("open.file",dialogOptions).then((filepath)=>{
         document.getElementById('submit').disabled = false;
-        document.getElementById('filepath').innerHTML = filepath
+        document.getElementById('filename').innerHTML = filepath
         document.getElementById('submit').addEventListener("click", function(){
-            const exec = require('child_process').exec;
-
-            function execute(command, callback) {
-                exec(command, (error, stdout, stderr) => { 
-                callback(stdout); 
-                });
-            }
             var path = require('path');
             if(type=='pdf'){
                 /*for building uncomment below line */
@@ -39,7 +32,6 @@ function fileHandle(){
                 var perl = require('child_process').spawn('perl',['src/run/pdf2john.pl',filepath]);
                 perl.stdout.on('data', function (data) {
                 document.getElementById('hash').value = data.toString('utf8');
-                document.getElementById('hash').hidden = false
                 });
             }
             else if(type=='doc'){
@@ -48,9 +40,7 @@ function fileHandle(){
                 /*for building comment below line */
                 var python = require('child_process').spawn('python3',['src/run/office2john.py',filepath]);
                 python.stdout.on('data', function (data) {
-                  document.getElementById('hash').innerHTML = data.toString('utf8');
                   document.getElementById('hash').value = data.toString('utf8');
-                  document.getElementById('hash').hidden = false
                 });
 
             }
