@@ -12,51 +12,35 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="logo">
-                <h1><span class="highlight">Cracker</span></h1>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <select name='filetype' id='filetype' class="dropbtn" onchange="fileType()">
-            <div class="dropdown-content">
-                <option value="" selected disabled hidden>File Type</option>
-                <option value="doc">doc</option>
-                <option value="pdf">pdf</option>
-            </div>
+    <br>
+    <br>
+        <select name='filetype' id='filetype' class="btn" onchange="fileType()">
+            <option value="" selected disabled hidden>File Type</option>
+            <option value="doc">doc</option>
+            <option value="pdf">pdf</option>
         </select>
-        </div>
 
-        <div class="dropdown">
-            <select name='passwdlen' id='passwdlen' class="dropbtn">
-            <div class="dropdown-content">
-                <option value="" selected disabled hidden>Password Length</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </div>
-            </select>
-        </div>
-    
-        <button class="term" id='tab' onclick="openShell();">Terminal</button>  
-        <button class="term" id='close' style="display: none;" onclick="closer();">Close Terminal</button>
-        <div id="terminal"></div>
-        <br>
+ 
+        <select name='passwdlen' id='passwdlen' class="btn">
+            <option value="" selected disabled hidden>Password Length</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
 
-        <script src="terminal.js"></script>
+    <button class="btn" id='tab' onclick="openShell();">Terminal</button>  
+    <button class="btn" id='close' style="display: none;" onclick="closer();">Close Terminal</button>
+    <div id="terminal"></div>
+    <br>
 
-            <button class="file" id="file" onclick="fileHandle()" disabled>Choose File</button><p id="filename">no file chosen</p>
-            <button class="file" id="submit" disabled>Submit</button>
+    <script src="terminal.js"></script>
 
-        <script src="file.js"></script>
-        <div class="hash">
-        <textarea  id="hash" readonly rows="4" cols="50" ></textarea>
-        </div>
-    </header>
+        <button class="btn" id="file" onclick="fileHandle()" disabled>Choose File</button><p id="filename">no file chosen</p>
+        <button class="btn" id="submit" disabled>Submit</button>
 
+    <script src="file.js"></script>
+    <textarea  id="hash" readonly rows="4" cols="50" ></textarea>
     <section id="showcase">
         <div class="container">
             <h1>Security</h1>
