@@ -76,7 +76,10 @@ html,body {
 }
 #result{
   color: #fa0606;
-  font-size: 25px;
+  text-align: left;
+  margin-left: 4%;
+  margin-bottom: 5%;
+  display: block;
 }
 
 
