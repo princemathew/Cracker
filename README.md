@@ -28,6 +28,7 @@ I used electron-builder, I had some issues while building : windows installer fr
 ## Credits
 
 pdf2john.pl and office2john.py source - https://github.com/openwall/john/
+hashcat - https://hashcat.net/hashcat/
 
 
 		
