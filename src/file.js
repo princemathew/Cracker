@@ -24,14 +24,14 @@ function fileHandle(){
         document.getElementById('submit').disabled = false;
         document.getElementById('filename').innerHTML = filepath
         document.getElementById('submit').addEventListener("click", function(){
-            var path = require('path');
+            //var path = require('path');
             if(type=='pdf'){
                 /*for building uncomment below line */
                 //var perl = require('child_process').spawn('perl',[path.join(__dirname, '../..', '/src/run/pdf2john.pl'),filepath]);
                 /*for building comment below line */
                 var perl = require('child_process').spawn('perl',['src/run/pdf2john.pl',filepath]);
                 perl.stdout.on('data', function (data) {
-                document.getElementById('hash').value = data.toString('utf8');
+                document.getElementById('hashout').value = data.toString('utf8');
                 });
             }
             else if(type=='doc'){
@@ -40,7 +40,7 @@ function fileHandle(){
                 /*for building comment below line */
                 var python = require('child_process').spawn('python3',['src/run/office2john.py',filepath]);
                 python.stdout.on('data', function (data) {
-                  document.getElementById('hash').value = data.toString('utf8');
+                  document.getElementById('hashout').value = data.toString('utf8');
                 });
 
             }

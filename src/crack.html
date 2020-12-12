@@ -15,38 +15,34 @@
 </head>
 
 <body>
-    <br>
-    <br>
-<div class="cracker">
-    <div class="hashextract">
-        
-        <select name='filetype' id='filetype' class="btn" onchange="fileType()">
-            <option value="" selected disabled hidden>File Type</option>
-            <option value="doc">doc</option>
-            <option value="pdf">pdf</option>
-        </select>
+<div class="header">
+    <select name='filetype' id='filetype' class="btn" onchange="fileType()">
+        <option value="" selected disabled hidden>File Type</option>
+        <option value="doc">doc</option>
+        <option value="pdf">pdf</option>
+    </select>
+    <button class="btn" id='tab' onclick="openShell();">Terminal</button>  
+    <button class="btn" id='close' onclick="closer();">Close Terminal</button>
+    <h1 class="appname">Cracker</h1>
+    <div id="terminal"></div>
 
- 
+</div>
 
 
-        <button class="btn" id='tab' onclick="openShell();">Terminal</button>  
-            <button class="btn" id='close' style="display: none;" onclick="closer();">Close Terminal</button>
-        <div id="terminal"></div>
-        <br>
-
+<div class="sec1">
+    <div class="sec1left">
        
 
         <button class="btn" id="file" onclick="fileHandle()" disabled>Choose File</button><p id="filename">no file chosen</p>
         <button class="btn" id="submit" disabled>Submit</button>
-        <textarea  id="hash" readonly rows="4" cols="50" ></textarea>
+        <textarea  id="hashout" readonly rows="4" cols="50"  placeholder="extracted hash"></textarea>
         
         
     </div>
     
 
-    <div class="crack">
-        <textarea  id="hashs" rows="4" cols="50" ></textarea>
-        <br>
+    <div class="sec1right">
+        <textarea  id="hashin" rows="4" cols="50" placeholder="paste your hash here"></textarea>
         <select name='passwdlen' id='passwdlen' class="btn">
             <option value="default" selected disabled hidden>Password Length</option>
             <option value="1">1</option>
@@ -61,12 +57,12 @@
 
         <select name='chars' id='chars' class="btn">
             <option value="default" selected disabled hidden>Characters</option>
-            <option value="?d">Numeric</option>
-            <option value="?l?u">Alphabets(l+u)</option>
-            <option value="?l?u?d">Alphanumeric</option>
-            <option value="?l?u?d?s">Alphanumeric + symbols</option>
-            <option value="?l">Alphabets(l)</option>
-            <option value="?u">Alphabets(u)</option>
+            <option value="?d">0-9</option>
+            <option value="?l?u">a-z,A-Z</option>
+            <option value="?l?u?d">0-9,a-z,A-Z</option>
+            <option value="?l?u?d?s">0-9,a-z,A-Z,symbols</option>
+            <option value="?l">a-z</option>
+            <option value="?u">A-Z</option>
         </select>
 
         <br>
@@ -80,9 +76,7 @@
             <option value="10500"> PDF 1.4 - 1.6</option>
             <option value="9400">MS Office 2007</option>
             <option value="9500">MS Office 2010</option>
-            <option value="9600">MS Office 2013</option>
-            <option value=""></option>
-
+            <option value="9600">MS Office 2013 </option>
         </select>
         <button class="btn" id="cracksub" onclick="crack();">Crack</button>
         <textarea  id="result" readonly rows="4" cols="50" ></textarea>
@@ -92,7 +86,7 @@
 </div>
 
 
-    <div id="showcase">
+    <div id="sec2">
         <h1>Security</h1>
         <p>Integer imperdiet tempor neque id interdum.
             Vestibulum dui turpis, tempus nec luctus quis,
@@ -105,13 +99,7 @@
     </div>
   
 
-        
- 
-    
-
-    <footer>
-        <p>Cracker will break the ciphers, Copyright &copy; 2020</p>
-    </footer>
+    <p class="foot">Cracker will break the ciphers, Copyright &copy; 2020</p>
 
 </body>
 

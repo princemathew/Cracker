@@ -6,8 +6,8 @@ var shell = os.platform() === "win32" ? "powershell.exe" : "bash";
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    minWidth: 1024,
+    minHeight: 768,
     webPreferences: {
       enableremotemodule: true,
       nodeIntegration: true
@@ -16,7 +16,7 @@ function createWindow () {
   win.maximize()
   win.loadFile('src/crack.html')
   win.webContents.executeJavaScript('localStorage.setItem("clickcount",0);', true);
-  //win.removeMenu();
+  win.removeMenu();
   var ptyProcess = pty.spawn(shell, [], {
     name: "xterm-color",
     cols: 80,

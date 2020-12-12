@@ -13,10 +13,16 @@ function openShell(){
     document.getElementById('close').style.display = 'inline';
     document.getElementById("tab").disabled = true;
     document.getElementById('terminal').style.display = 'inline';
+    var term = new Terminal({
+        cols: 50,
+        rows: 10,
+        screenKeys: true,
+        cursorBlink: true
+        });
     if(localStorage.clickcount==1){
-    var term = new Terminal();
+    
     term.open(document.getElementById('terminal'));
-    term.write("$");
+    ipc.send("terminal.keystroke", 'clear\n');
     }
     ipc.on("terminal.incomingData", (event, data) => {
         term.write(data);
