@@ -5,3 +5,5 @@ kernels/
 hashcat.log
 hashcat.potfile
 show.log
+hashcat.pid
+hashcat.restore

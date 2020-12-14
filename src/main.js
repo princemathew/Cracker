@@ -41,8 +41,10 @@ ipcMain.handle("open.file", async(event,dialogOptionts)=>{
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
+  
   if (process.platform !== 'darwin') {
     app.quit()
+    require('child_process').exec("pkill hashcat")
   }
 })
 

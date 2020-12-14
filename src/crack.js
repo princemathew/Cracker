@@ -26,7 +26,6 @@ function crack(){
                         charset+="?1"
                     var hashc = "src/run/hashcat.bin"+" -m "+hashtype+" -a 3 "+hash+" -1 "+chars+" "+charset+ " --quiet";
                     var hashcat = require('child_process').exec(hashc);
-            
                     document.getElementById('result').value="cracking..."
                    
         
