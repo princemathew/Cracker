@@ -20,7 +20,6 @@ sudo apt-get install -y nodejs
 
 ## Packaging
 
-I used electron-builder, I had some issues while building : windows installer from ubuntu and ubuntu installer from windows.
 
 ```npm run dist```
 
